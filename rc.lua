@@ -85,10 +85,12 @@ tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
     --tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    -- tags[s] = awful.tag({ "α", "β", "γ", "δ", "ε", "ζ" }, s, layouts[1])
     --tags[s] = awful.tag({ "terminal", "gvim", "firefox", "4", "5", 6, 7, "servers", "sound" }, s, layouts[1])
     tags[s] = awful.tag({ "", "", "", "", "", "", "", "", "" }, s, layouts[1])
     icons = {"/home/dmitrii/.config/awesome/icons/term1.png",
             "/home/dmitrii/.config/awesome/icons/vim.gif",
+            "/home/dmitrii/.config/awesome/icons/my/vim.png",
             "/home/dmitrii/.config/awesome/icons/firefox.png",
             "/home/dmitrii/.config/awesome/icons/messaging.gif",
             "/home/dmitrii/.config/awesome/icons/email.gif",
@@ -98,7 +100,7 @@ for s = 1, screen.count() do
             "/home/dmitrii/.config/awesome/icons/sound.png"}
     awful.tag.seticon(icons[1],tags[s][1])
     awful.tag.seticon(icons[2],tags[s][2])
-    awful.tag.seticon(icons[3],tags[s][3])	
+    awful.tag.seticon(icons[3],tags[s][3])
     awful.tag.seticon(icons[4],tags[s][4])
     awful.tag.seticon(icons[5],tags[s][5])
     awful.tag.seticon(icons[6],tags[s][6])
@@ -199,7 +201,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top",  screen = s })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -458,3 +460,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- }}}
 awful.util.spawn_with_shell("parcellite")
+awful.util.spawn_with_shell("batti")
