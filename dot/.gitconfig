@@ -1,0 +1,14 @@
+[user]
+	name = Dmitrii Prihodco
+	email = dmitrii.prihodco@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[diff]
+	; external = vimdiff
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
