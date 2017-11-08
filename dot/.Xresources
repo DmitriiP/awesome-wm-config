@@ -20,45 +20,7 @@ Xft.rgba: rgb
 URxvt*font: xft:Menlo for Powerline:size=9
 URxvt.iso14755: false
 !-------------------------------------------------------
-!https://github.com/muennich/urxvt-perls = Very usefull collection of scripts
-URxvt.perl-ext-common: default,url-select,clipboard
-!Keyboard selection
-! URxvt.perl-ext-common: ...,keyboard-select
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
-!h/j/k/l:    Move cursor left/down/up/right (also with arrow keys)
-!g/G/0/^/$/H/M/L/f/F/;/,/w/W/b/B/e/E: More vi-like cursor movement keys
-!'/'/?:      Start forward/backward search
-!n/N:        Repeat last search, N: in reverse direction
-!Ctrl-f/b:   Scroll down/up one screen
-!Ctrl-d/u:   Scroll down/up half a screen
-!v/V/Ctrl-v: Toggle normal/linewise/blockwise selection
-!y/Return:   Copy selection to primary buffer, Return: deactivate afterwards
-!q/Escape:   Deactivate keyboard selection mode
-
-
-!url-select
-! URxvt.perl-ext-common: ...,url-select
-URxvt.keysym.M-u: perl:url-select:select_next
-!j/k:      Select next downward/upward URL (also with arrow keys)
-!g/G:      Select first/last URL (also with home/end key)
-!o/Return: Open selected URL in browser, Return: deactivate afterwards
-!y:        Copy (yank) selected URL and deactivate selection mode
-!q/Escape: Deactivate URL selection mode
-
-
-!Clipboard!
-! URxvt.perl-ext-common: ...,clipboard
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-
-URxvt.clipboard.copycmd:  xclip -i -selection clipboard
-URxvt.clipboard.pastecmd: xclip -o -selection clipboard
-
-
-
-
+URxvt.clipboard.autocopy: true
 !----------------------
 URxvt.urgentOnBell: True
 ! special
