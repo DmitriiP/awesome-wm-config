@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper= os.getenv("HOME") .. "./config/awesome/pray-skull.jpg"
+theme.wallpaper= os.getenv("HOME") .. "/.config/awesome/pray-skull.jpg"
 -- }}}
 
 -- {{{ Styles
