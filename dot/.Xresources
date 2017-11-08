@@ -1,30 +1,10 @@
-!setxkbmap -option "" -layout "us,ru" -option grp:alt_shift_toggle -option grp_led:scroll :2
-
-!Xft.antialias:true
-! #urxvt terminal emulator settings:
-! URxvt*font: xft:Dejavu Sans Mono:pixelsize=10:antialias=true:hinting=true
-! URxvt*boldFont: xft:Dejavu Sans Mono:bold:pixelsize=10:antialias=true:hinting=true
-! URxvt*transparent: true
-! URxvt*shading: 40
-! URxvt*saveLines: 12000
-! #URxvt*foreground: White
-! #URxvt*background: Black
-! URxvt*scrollBar: false
-! URxvt*termName:screen-256color
 ! ******************************************************************URXVT
 URxvt.transparent: true
 ! URxvt.shading: 0 to 99 darkens, 101 to 200 lightens
 ! URxvt.shading: 83
 URxvt.shading: 23
-URxvt*foreground: #fdf6e3
-URxvt*background: Black
 URxvt*scrollBar: false
-! Urxvt*faceName:100Dejavu\ Sans\ Mono
-! urxvt*font: xft:DejaVu Sans Mono:size=9
-! URxvt*font: xft:Monospace:size=9
 URxvt.letterSpace:-2
-! Urxvt*faceSize: 8
-! Urxvt*fontSize: 8
 
 
 !font settings suggested by infinality
@@ -37,114 +17,13 @@ Xft.dpi: 96
 Xft.rgba: rgb
 
 
-XTerm*faceName: Dejavu Sans Mono
-XTerm*faceSize: 9
-XTerm*fontSize: 9
 URxvt*font: xft:Menlo for Powerline:size=9
-!=================================================================!
-!! Main xterm options
-!XTerm*Geometry: 100x60
-!xterm*bellIsUrgent: true
-!XTerm*background: White
-!xterm*foreground: Black
-! xterm*foreground: White
-! XTerm*background: Black
-!xterm*foreground: grey85
-xterm*highlightTextColor:  grey10
-xterm*highlightColor:  lightgreen
-xterm*dynamicColors: true
-XTerm*scrollBar: false
-!xterm*trimSelection: true
-xterm*charClass:33:48,35:48,37-38:48,39:43,42-47:48,58-59:48,61:48,63-64:48,124:1,126:48
-xterm*renderFont: true
-!xterm*saveLines: 0
-!xterm*backarrowKey: false
-!xterm*metaSendsEscape: true
-!xterm*locale: true
-!XTerm*termName: xterm-256color
-xterm*utf8: 1
-!xterm*faceName:Droid Sans Mono Slashed
-!xterm*faceSize: 12
-!xterm*boldMode: false
-!!*xterm*background: grey3*/
-!
-XTerm*background:  #3f3f3f
-XTerm*foreground:  #dcdccc
-XTerm*color0:      #000000
-XTerm*color1:      #9e1828
-XTerm*color2:      #aece92
-XTerm*color3:      #968a38
-XTerm*color4:      #292947
-XTerm*color5:      #963c59
-XTerm*color6:      #418179
-XTerm*color7:      #bebebe
-XTerm*color8:      #666666
-XTerm*color9:      #cf6171
-XTerm*color10:     #c5f779
-XTerm*color11:     #fff796
-XTerm*color12:     #4186be
-XTerm*color13:     #cf9ebe
-XTerm*color14:     #71bebe
-XTerm*color15:     #ffffff
-!======================================================
-URxvt*color0:      #000000
-URxvt*color1:      #9e1828
-URxvt*color2:      #aece92
-URxvt*color3:      #968a38
-URxvt*color4:      #292947
-URxvt*color5:      #963c59
-URxvt*color6:      #418179
-URxvt*color7:      #bebebe
-URxvt*color8:      #666666
-URxvt*color9:      #cf6171
-URxvt*color10:     #c5f779
-URxvt*color11:     #fff796
-URxvt*color12:     #4186be
-URxvt*color13:     #cf9ebe
-URxvt*color14:     #71bebe
-URxvt*color15:     #ffffff
-
-
-!----------------------------------------------------------------
-urxvt.foreground: #ffffff
-urxvt.background: rgba:1000/1000/1000/DDDD
-
-!-- Tango color scheme
-! Black
-URxvt*color0: #2e3436
-URxvt*color8: #555753
-
-! Red
-URxvt*color1: #cc0000
-URxvt*color9: #ef2929
-
-! Green
-URxvt*color2: #4e9a06
-URxvt*color10: #8ae234
-
-! Yellow
-URxvt*color3: #c4a000
-URxvt*color11: #fce94f
-
-! Blue
-URxvt*color4: #00AFFF
-URxvt*color12: #729fcf
-
-! Purple
-URxvt*color5: #75507b
-URxvt*color13: #ad7fa8
-
-! Cyan
-URxvt*color6: #0b939b
-URxvt*color14: #00f5e9
-
-! White
-URxvt*color15: #eeeeec
-URxvt*color7: #d3d7cf
+URxvt.iso14755: false
 !-------------------------------------------------------
 !https://github.com/muennich/urxvt-perls = Very usefull collection of scripts
+URxvt.perl-ext-common: default,url-select,clipboard
 !Keyboard selection
-URxvt.perl-ext-common: ...,keyboard-select
+! URxvt.perl-ext-common: ...,keyboard-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 !h/j/k/l:    Move cursor left/down/up/right (also with arrow keys)
@@ -159,7 +38,7 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 
 
 !url-select
-URxvt.perl-ext-common: ...,url-select
+! URxvt.perl-ext-common: ...,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 !j/k:      Select next downward/upward URL (also with arrow keys)
 !g/G:      Select first/last URL (also with home/end key)
@@ -169,7 +48,7 @@ URxvt.keysym.M-u: perl:url-select:select_next
 
 
 !Clipboard!
-URxvt.perl-ext-common: ...,clipboard
+! URxvt.perl-ext-common: ...,clipboard
 URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
@@ -178,45 +57,43 @@ URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
 
-URxvt.perl-ext-common: keyboard-select,url-select,clipboard
 
 
 !----------------------
 URxvt.urgentOnBell: True
+! special
+URxvt.foreground:   #93a1a1
+URxvt.background:   #002b36
+URxvt.cursorColor:  #93a1a1
 
+! black
+URxvt.color0:       #002b36
+URxvt.color8:       #657b83
 
+! red
+URxvt.color1:       #dc322f
+URxvt.color9:       #dc322f
 
+! green
+URxvt.color2:       #859900
+URxvt.color10:      #859900
 
-!-- Tango color scheme
-! Black
-! xterm*color0: #2e3436
-! xterm*color8: #555753
-!
-! ! Red
-! xterm*color1: #cc0000
-! xterm*color9: #ef2929
-!
-! ! Green
-! xterm*color2: #4e9a06
-! xterm*color10: #8ae234
-!
-! ! Yellow
-! xterm*color3: #c4a000
-! xterm*color11: #fce94f
-!
-! ! Blue
-! xterm*color4: #00AFFF
-! xterm*color12: #729fcf
-!
-! ! Purple
-! xterm*color5: #75507b
-! xterm*color13: #ad7fa8
-!
-! ! Cyan
-! xterm*color6: #0b939b
-! xterm*color14: #00f5e9
-!
-! ! White
-! xterm*color15: #eeeeec
-! xterm*color7: #d3d7cf
-!
+! yellow
+URxvt.color3:       #b58900
+URxvt.color11:      #b58900
+
+! blue
+URxvt.color4:       #268bd2
+URxvt.color12:      #268bd2
+
+! magenta
+URxvt.color5:       #6c71c4
+URxvt.color13:      #6c71c4
+
+! cyan
+URxvt.color6:       #2aa198
+URxvt.color14:      #2aa198
+
+! white
+URxvt.color7:       #93a1a1
+URxvt.color15:      #fdf6e3
