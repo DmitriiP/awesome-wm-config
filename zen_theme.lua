@@ -8,17 +8,11 @@
 
 -- {{{ Main
 theme = {}
---theme.wallpaper_cmd = { "awsetbg /usr/share/awesome/themes/zenburn/zenburn-background.png" }
---theme.wallpaper_cmd = { "awsetbg /home/di/images/sakura_lava.jpg" }
---theme.wallpaper= "/home/di/images/sakura_lava.jpg"
---theme.wallpaper= "/home/dmitrii/images/3.jpg"
---theme.wallpaper= "/home/dmitrii/images/dual2-spaceship-thread-spaceship-thread-wallpaper.jpg"
-theme.wallpaper= "/home/dmitrii/images/pray-skull.jpg"
---theme.wallpaper = "/usr/share/awesome/themes/default/background.png"
+theme.wallpaper= os.getenv("HOME") .. "./config/awesome/pray-skull.jpg"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 8"
+theme.font = "xos4 Terminus 8"
 
 -- {{{ Colors
 theme.fg_normal = "#DCDCCC"
@@ -30,7 +24,7 @@ theme.bg_urgent = "#3F3F3F"
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = "2"
+theme.border_width  = "1"
 theme.border_normal = "#3F3F3F"
 theme.border_focus  = "#993300"
 theme.border_marked = "#CC9393"
