@@ -188,8 +188,36 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "α", "β", "γ", "δ", "ε", "ζ" }, s, awful.layout.layouts[1])
-
+    awful.tag.add("", {
+        icon = config_dir .. "/icons/terminal.png",
+        layout = awful.layout.suit.tile,
+        screen = s
+    })
+    awful.tag.add("", {
+        icon = config_dir .. "/icons/vim.png",
+        layout = awful.layout.suit.tile,
+        screen = s
+    })
+    awful.tag.add("", {
+        icon = config_dir .. "/icons/chrome.png",
+        layout = awful.layout.suit.tile,
+        screen = s
+    })
+    awful.tag.add("", {
+        icon = config_dir .. "/icons/slack.png",
+        layout = awful.layout.suit.tile,
+        screen = s
+    })
+    awful.tag.add("", {
+        icon = config_dir .. "/icons/folder.png",
+        layout = awful.layout.suit.tile,
+        screen = s
+    })
+    awful.tag.add("", {
+        icon = config_dir .. "/icons/wrench.png",
+        layout = awful.layout.suit.tile,
+        screen = s
+    })
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
