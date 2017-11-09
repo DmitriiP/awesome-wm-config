@@ -8,7 +8,8 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper= os.getenv("HOME") .. "/.config/awesome/pray-skull.jpg"
+config_dir = os.getenv("HOME") .. "/.config/awesome/"
+theme.wallpaper= config_dir .. "wall.jpg"
 -- }}}
 
 -- {{{ Styles
@@ -76,51 +77,32 @@ theme.taglist_squares_unsel = "/usr/share/awesome/themes/zenburn/taglist/squarez
 --theme.taglist_squares_resize = "false"
 -- }}}
 
--- {{{ Misc
-theme.awesome_icon           = "/usr/share/awesome/themes/zenburn/awesome-icon.png"
-theme.menu_submenu_icon      = "/usr/share/awesome/themes/default/submenu.png"
-theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
--- }}}
-
 -- {{{ Layout
-theme.layout_tile       = "/usr/share/awesome/themes/zenburn/layouts/tile.png"
-theme.layout_tileleft   = "/usr/share/awesome/themes/zenburn/layouts/tileleft.png"
-theme.layout_tilebottom = "/usr/share/awesome/themes/zenburn/layouts/tilebottom.png"
-theme.layout_tiletop    = "/usr/share/awesome/themes/zenburn/layouts/tiletop.png"
-theme.layout_fairv      = "/usr/share/awesome/themes/zenburn/layouts/fairv.png"
-theme.layout_fairh      = "/usr/share/awesome/themes/zenburn/layouts/fairh.png"
-theme.layout_spiral     = "/usr/share/awesome/themes/zenburn/layouts/spiral.png"
-theme.layout_dwindle    = "/usr/share/awesome/themes/zenburn/layouts/dwindle.png"
-theme.layout_max        = "/usr/share/awesome/themes/zenburn/layouts/max.png"
-theme.layout_fullscreen = "/usr/share/awesome/themes/zenburn/layouts/fullscreen.png"
-theme.layout_magnifier  = "/usr/share/awesome/themes/zenburn/layouts/magnifier.png"
-theme.layout_floating   = "/usr/share/awesome/themes/zenburn/layouts/floating.png"
+theme.layout_tile       = config_dir .. "icons/layouts/tile.png"
+theme.layout_fairv      = config_dir .. "icons/layouts/fairv.png"
+theme.layout_fullscreen = config_dir .. "icons/layouts/max.png"
+theme.layout_floating   = config_dir .. "icons/layouts/floating.png"
 -- }}}
 
--- {{{ Titlebar
-theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/zenburn/titlebar/close_focus.png"
-theme.titlebar_close_button_normal = "/usr/share/awesome/themes/zenburn/titlebar/close_normal.png"
-
-theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_active.png"
-theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_inactive.png"
-
-theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_active.png"
-theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_inactive.png"
-
-theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_active.png"
-theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_inactive.png"
-
-theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_active.png"
-theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
+-- {{{ Widgets
+theme.battery_ac    = config_dir .. "icons/widgets/ac.png"
+theme.battery_empty = config_dir .. "icons/widgets/battery_empty.png"
+theme.battery_low   = config_dir .. "icons/widgets/battery_low.png"
+theme.battery       = config_dir .. "icons/widgets/battery.png"
+theme.cpu           = config_dir .. "icons/widgets/cpu.png"
+theme.hdd           = config_dir .. "icons/widgets/hdd.png"
+theme.mem           = config_dir .. "icons/widgets/mem.png"
+theme.net_wifi      = config_dir .. "icons/widgets/net.png"
+theme.net_wired     = config_dir .. "icons/widgets/net_wired.png"
+theme.net_up        = config_dir .. "icons/widgets/net_up.png"
+theme.net_down      = config_dir .. "icons/widgets/net_down.png"
+theme.temp          = config_dir .. "icons/widgets/temp.png"
+theme.vol           = config_dir .. "icons/widgets/vol.png"
+theme.vol_no        = config_dir .. "icons/widgets/vol_no.png"
+theme.vol_mute      = config_dir .. "icons/widgets/vol_mute.png"
+theme.vol_low       = config_dir .. "icons/widgets/vol_low.png"
 -- }}}
+
 -- }}}
 
 return theme

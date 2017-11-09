@@ -80,6 +80,93 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+-- MEM
+local markup = lain.util.markup
+local memicon = wibox.widget.imagebox(beautiful.mem)
+local mem = lain.widget.mem({
+    settings = function()
+        widget:set_markup(markup.font(theme.font, " " .. mem_now.used .. "MB "))
+    end
+})
+
+-- CPU
+local cpuicon = wibox.widget.imagebox(beautiful.cpu)
+local cpu = lain.widget.cpu({
+    settings = function()
+        widget:set_markup(markup.font(theme.font, " " .. cpu_now.usage .. "% "))
+    end
+})
+
+-- Coretemp
+local tempicon = wibox.widget.imagebox(beautiful.temp)
+local temp = lain.widget.temp({
+    settings = function()
+        widget:set_markup(markup.font(theme.font, " " .. coretemp_now .. "°C "))
+    end
+})
+
+-- / fs
+local fsicon = wibox.widget.imagebox(beautiful.hdd)
+local fs = lain.widget.fs({
+    options  = "--exclude-type=tmpfs",
+    notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "xos4 Terminus 10" },
+    settings = function()
+        widget:set_markup(markup.font(theme.font, " " .. fs_now.used .. "% "))
+    end
+})
+
+-- Battery
+local baticon = wibox.widget.imagebox(beautiful.battery)
+local bat = lain.widget.bat({
+    settings = function()
+        if bat_now.status ~= "N/A" then
+            if bat_now.ac_status == 1 then
+                widget:set_markup(markup.font(theme.font, " AC "))
+                baticon:set_image(beautiful.battery_ac)
+                return
+            elseif not bat_now.perc and tonumber(bat_now.perc) <= 5 then
+                baticon:set_image(beautiful.battery_empty)
+            elseif not bat_now.perc and tonumber(bat_now.perc) <= 15 then
+                baticon:set_image(beautiful.battery_low)
+            else
+                baticon:set_image(beautiful.battery)
+            end
+            widget:set_markup(markup.font(theme.font, " " .. bat_now.perc .. "% "))
+        else
+            widget:set_markup(markup.font(theme.font, " AC "))
+            baticon:set_image(beautiful.battery_ac)
+        end
+    end
+})
+
+-- ALSA volume
+local volicon = wibox.widget.imagebox(beautiful.vol)
+local volume = lain.widget.alsa({
+    settings = function()
+        if volume_now.status == "off" then
+            volicon:set_image(beautiful.vol_mute)
+        elseif tonumber(volume_now.level) == 0 then
+            volicon:set_image(beautiful.vol_no)
+        elseif tonumber(volume_now.level) <= 50 then
+            volicon:set_image(beautiful.vol_low)
+        else
+            volicon:set_image(beautiful.vol)
+        end
+
+        widget:set_markup(markup.font(theme.font, " " .. volume_now.level .. "% "))
+    end
+})
+
+-- Net
+local neticon = wibox.widget.imagebox(beautiful.net_wifi)
+local net = lain.widget.net({
+    settings = function()
+        widget:set_markup(markup.font(theme.font,
+                          markup("#7AC82E", " " .. net_now.received)
+                          .. " " ..
+                          markup("#46A8C3", " " .. net_now.sent .. " ")))
+    end
+})
 
 
 local function set_wallpaper(s)
@@ -166,6 +253,20 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+            neticon,
+            net.widget,
+            volicon,
+            volume.widget,
+            fsicon,
+            fs.widget,
+            memicon,
+            mem.widget,
+            cpuicon,
+            cpu.widget,
+            tempicon,
+            temp.widget,
+            baticon,
+            bat.widget,
             mytextclock,
             s.mylayoutbox,
         },
@@ -431,5 +532,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-awful.spawn.with_shell("parcellite")
-awful.spawn.with_shell("cbatticon")
+-- awful.spawn.with_shell("parcellite")
+-- awful.spawn.with_shell("cbatticon")
